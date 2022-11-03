@@ -1,0 +1,48 @@
+
+#include "TXLib.h"
+
+int main()
+    {
+    txCreateWindow (800, 600);
+
+    int x0 = 0;
+    int y0 = 300;
+    int r  = 50;
+    float a = 0;
+    int x1;
+    int y1;
+
+
+    while(x0 < 800)
+    {
+        txSetColor (TX_BLACK);
+        txSetFillColor (TX_BLACK);
+        txRectangle (0, 0, 800, 600);
+
+        txSetColor (TX_WHITE, 5);
+        txSetFillColor (TX_BLACK);
+        txCircle (x0, y0, r);
+
+        x1 = x0+r*cos(a);
+        y1 = y0+r*sin(a);
+        x2 = x0+r*cos(a);
+        y2 = y0+r*sin(a);
+        x3 = x0+r*cos(a);
+        y3 = y0+r*sin(a);
+
+        txLine    (x0, y0, x1, y1);
+        txLine    (x0, y0, x1, y1);
+        txLine    (x0, y0, x1, y1);
+
+        x0+=5;
+        a+=0.1;
+        txSleep(10);
+
+        }
+
+
+
+    txTextCursor (false);
+    return 0;
+    }
+
